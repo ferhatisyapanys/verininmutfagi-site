@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Haftalık Bülten - Verinin Mutfağı</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="{{TITLE}} - Haftalık bülten içeriği.">
+  <meta property="og:title" content="{{TITLE}} - Verinin Mutfağı">
+  <meta property="og:description" content="Haftalık bülten">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="{{HERO}}">
+  <script src="../env.config.js"></script>
+  <link rel="stylesheet" href="../vendor/starbelly/css/plugins/font-awesome.min.css">
+  <link rel="stylesheet" href="../vendor/starbelly/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/starbelly/css/style.css">
+  <link rel="stylesheet" href="../assets/css/site.css?v=4">
+  <style>
+    /* Ensure Starbelly UI renders without theme JS */
+    .sb-preloader,.sb-click-effect,.sb-load{display:none!important}
+  </style>
+  <style>
+    /* Ensure Google Docs content is readable */
+    .vm-article{color:var(--text); font-size:16px; line-height:1.6}
+    .vm-article p{margin:10px 0}
+    .vm-article img{max-width:100%; height:auto; border-radius:8px}
+    .vm-article a{color:#0b5ed7}
+    /* Neutralize Google Docs class coloring */
+    .vm-article [class^="c"], .vm-article [class*=" c"]{color:inherit}
+  </style>
+</head>
+<body class="blog-page">
+  <div class="sb-top-bar-frame">
+    <div class="sb-top-bar-bg"></div>
+    <div class="container">
+      <div class="sb-top-bar">
+        <a href="../index.html" class="sb-logo-frame">
+          <img src="../assets/img/logo.png" alt="Verinin Mutfağı">
+        </a>
+        <div class="sb-right-side">
+          <nav class="sb-menu-transition">
+            <ul class="sb-navigation">
+              <li><a href="../index.html">Ana Sayfa</a></li>
+              <li><a href="../blog/index.html">Blog</a></li>
+              <li class="sb-active"><a href="index.html">Haftalık Bültenler</a></li>
+              <li><a href="../youtube/index.html">YouTube</a></li>
+              <li><a href="../contact/index.html">İletişim</a></li>
+            </ul>
+          </nav>
+          <div class="sb-buttons-frame">
+            <div class="sb-menu-btn"><span></span></div>
+            <div class="sb-info-btn"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="vm-container">
+    <h1 class="vm-title">{{TITLE}}</h1>
+    <div class="vm-meta">({{DATE}})</div>
+    <div class="vm-hero" style="margin:10px 0 20px">
+      <div class="vm-hero-bg" style="display:none"></div>
+      <img src="{{HERO}}" alt="Kapak" style="max-width:100%;border-radius:12px">
+    </div>
+    <p class="vm-muted">{{INTRO}}</p>
+    <!-- Bülten gövdesi (Google Docs içeriği veya özet) -->
+    {{DOC_HTML}}
+
+    <div class="vm-back"><a href="index.html">← Bülten arşivine dön</a></div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="sb-footer-frame">
+        <a href="../index.html" class="sb-logo-frame">
+          <img src="../assets/img/logo.png" alt="Verinin Mutfağı">
+        </a>
+        <div class="sb-copy">&copy; <a href="../index.html">Verinin Mutfağı</a></div>
+        <nav class="vm-social">
+          <a href="https://www.linkedin.com/in/ferhatisyapan/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/ferhatisyapanys/VerininMutfagi" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://instagram.com/verininmutfagi" target="_blank" rel="noopener">Instagram</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  
+</body>
+</html>

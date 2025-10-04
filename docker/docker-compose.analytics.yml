@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  analytics:
+    build:
+      context: ..
+      dockerfile: Dockerfile.analytics
+    container_name: vm-analytics
+    environment:
+      - ANALYTICS_TOKEN=
+    ports:
+      - "8787:8080"
+    restart: unless-stopped
+

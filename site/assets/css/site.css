@@ -1,0 +1,208 @@
+/* Verinin Mutfağı - Minimal Tema */
+:root { --bg:#ffffff; --text:#2c2c2c; --muted:#666; --brand:#f5c842; --border:#ececec; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif}
+a{color:var(--text);text-decoration:none}
+a:visited{color:var(--text)}
+a:hover{text-decoration:underline}
+
+/* Fixed header globally (always visible) */
+.sb-top-bar-frame{position:fixed !important; top:0 !important; left:0; right:0; z-index:9999; background:#fff}
+/* Page paddings under fixed header (home has its own hero spacing) */
+.blog-page, .youtube-page, .contact-page { padding-top: 90px }
+@media (min-width: 993px){ .blog-page, .youtube-page, .contact-page { padding-top: 110px } }
+
+.vm-container{max-width:1100px;margin:0 auto;padding:0 20px}
+.vm-header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:10}
+.vm-header-row{display:flex;align-items:center;justify-content:space-between;height:64px}
+.vm-logo img{height:40px;display:block}
+.vm-nav a{margin-left:16px;color:var(--text)}
+.vm-nav a.active{font-weight:600;border-bottom:2px solid var(--brand);padding-bottom:6px}
+
+/* (home header remains default for logo visibility) */
+
+.vm-hero{position:relative;min-height:520px;display:flex;align-items:center;border-bottom:1px solid var(--border);margin-bottom:24px;background:#fff}
+.vm-hero .vm-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.vm-hero .vm-hero-overlay{display:none}
+.vm-hero .vm-hero-content{position:relative;color:var(--text);padding:48px 0}
+.vm-hero h1{font-size:56px;margin:0 0 12px;letter-spacing:.2px}
+.vm-hero p{opacity:.9;margin:0 0 22px}
+.vm-btn{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:12px 20px}
+.vm-btn-brand{background:var(--brand);color:#1a1a1a}
+.vm-btn-brand:hover{opacity:.9;text-decoration:none}
+
+/* Hero layout */
+.vm-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+.vm-hero-photo-wrap{position:relative;display:flex;justify-content:center}
+.vm-hero-photo{position:relative;max-width:520px;width:100%;height:auto;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+
+.vm-title{font-size:32px;margin:22px 0}
+.vm-subtitle{font-size:22px;margin:16px 0}
+.vm-breadcrumb{font-size:14px;color:var(--muted);margin:18px 0}
+.vm-back{margin:24px 0}
+.vm-meta{color:var(--muted);font-size:14px;margin:-10px 0 18px}
+
+.vm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.vm-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.vm-card .vm-card-cover{aspect-ratio:16/9;background:#f2f2f2;display:block;object-fit:cover;width:100%;height:auto}
+.vm-card .vm-card-body{padding:14px}
+.vm-card .vm-card-meta{color:var(--muted);font-size:13px;margin:0 0 6px}
+.vm-card h3{margin:0 0 8px;font-size:18px}
+.vm-card p{margin:0;color:var(--muted);font-size:14px}
+
+.vm-article{padding:10px 0}
+.vm-article h2,.vm-article h3{margin-top:28px}
+.vm-article img{max-width:100%;height:auto}
+.vm-article pre{background:#f6f8fa;border:1px solid var(--border);padding:12px;border-radius:6px;overflow:auto}
+.vm-article blockquote{border-left:4px solid var(--brand);margin:18px 0;padding:8px 14px;background:#fffbea}
+.vm-article code{background:#f6f8fa;border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+.vm-article ul{padding-left:20px}
+.vm-article li{margin:6px 0}
+
+.vm-footer{margin-top:40px;border-top:1px solid var(--border);padding:20px 0;color:var(--muted);font-size:14px}
+.vm-footer-row{display:flex;align-items:center;justify-content:space-between}
+.vm-social a{margin-left:12px;color:var(--muted)}
+
+.vm-about{margin-top:28px}
+.vm-contact{margin-top:28px}
+
+/* Starbelly header overrides: keep header fixed; hide infobar/preloader */
+.blog-page .sb-top-bar-bg{display:none!important}
+.sb-info-bar,.sb-load,.sb-click-effect,.sb-preloader{display:none!important}
+/* Hide shop/cart/download sections globally */
+.sb-btn-cart,.sb-minicart,.sb-call-to-action,.sb-popup-frame{display:none!important}
+
+/* Keep Starbelly default banner spacing (no overrides) */
+
+/* Buttons text color to match site (black) */
+.sb-btn span{color:#111!important}
+.sb-btn-2 span{color:#111!important}
+
+/* Header logo: prevent stretching and keep aspect ratio */
+.sb-top-bar .sb-logo-frame{ width:auto !important; }
+.sb-top-bar .sb-logo-frame img{ height:48px; width:auto !important; max-height:80px; display:block }
+@media (max-width: 992px){
+  .sb-top-bar .sb-logo-frame img{ height:40px; max-height:60px }
+}
+
+/* Home hero: icon backgrounds brand yellow on gray variant */
+.home-page .sb-btn.sb-btn-2.sb-btn-gray.sb-btn-icon .sb-icon{
+  background-color: var(--brand) !important;
+  box-shadow: none !important;
+}
+/* Home banner spacing: pull text/buttons up (do not affect image) */
+.home-page .sb-banner .sb-main-title-frame{height:auto !important; padding:140px 0 30px !important; align-items:flex-start !important}
+@media (max-width: 992px){
+  .home-page .sb-banner .sb-main-title-frame{height:auto !important; padding:120px 0 30px !important}
+}
+/* Voices (testimonials) */
+.vm-voices{margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px}
+/* ensure extra spacing on home hero */
+.home-page .vm-voices{ margin-top:48px !important }
+.vm-voice{position:relative; background:#ffffff; border:1px solid var(--border); border-radius:12px; padding:12px 12px 10px; box-shadow:0 6px 16px rgba(0,0,0,.035)}
+.vm-voice::before{content:'“'; position:absolute; top:-4px; right:10px; font-size:56px; color:#b38f00; opacity:.05; pointer-events:none}
+/* subtle brand accent strip */
+.vm-voice::after{content:''; position:absolute; top:0; left:12px; width:36px; height:3px; background:var(--brand); border-radius:6px}
+.vm-voice-head{display:flex; align-items:center; gap:6px; margin-bottom:6px}
+/* hide decorative icons per request */
+.vm-voice-icon{display:none}
+.vm-voice-role{font-size:11.5px; color:#999}
+.vm-voice-quote{font-size:13px; line-height:1.5; margin:0; font-style:italic; color:#777}
+/* Slightly taller engineer card without extra width */
+.vm-voice-wide{ min-height:0 }
+@media (min-width: 992px){ .vm-voice-wide{ grid-column: auto; min-height:0; padding:12px 12px 10px } }
+/* Normalize FA icon sizing/position in home hero buttons */
+.home-page .sb-btn.sb-btn-2.sb-btn-gray.sb-btn-icon .sb-icon i{
+  font-size: 20px; /* close to original 22px svg look */
+  line-height: 1;
+}
+/* Slight nudge for utensils glyph to match visual baseline */
+.home-page .sb-btn .fa-utensils{ transform: translateY(1px); }
+
+/* Features section */
+.vm-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.vm-feature{border:1px solid var(--border);border-radius:12px;background:#fff;padding:20px}
+.vm-feature-number{width:36px;height:36px;border-radius:50%;background:var(--brand);color:#111;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:10px}
+.vm-feature h3{margin:6px 0 8px}
+.vm-feature p{margin:0;color:var(--muted)}
+
+/* Homepage hero portrait tuning */
+.sb-illustration-1 .sb-girl{display:block;max-width:500px;width:100%;height:auto;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+@media (min-width: 992px){
+  .sb-illustration-1 .sb-girl{margin:0 auto;transform:translateX(-24px)}
+}
+@media (min-width: 1200px){
+  .sb-illustration-1 .sb-girl{transform:translateX(-36px)}
+}
+
+/* Crop white borders by framing portrait */
+.vm-portrait-frame{position:relative; width:100%; max-width:560px; aspect-ratio: 4/5; border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.12)}
+.vm-portrait-frame .sb-girl{width:100%; height:100%; max-width:none; border-radius:0; box-shadow:none; object-fit:cover; object-position: 20% 15%}
+@media (min-width: 992px){ .vm-portrait-frame{ margin:0 auto; transform:translateX(-24px) } }
+@media (min-width: 1200px){ .vm-portrait-frame{ transform:translateX(-36px) } }
+
+/* Hero title slight reduction to fit two lines */
+@media (min-width: 992px){
+  .sb-banner .sb-main-title h1{font-size:52px; line-height:1.15}
+}
+
+/* Contact form */
+.vm-form{display:grid;gap:10px}
+.vm-form label{display:grid;gap:6px;font-weight:600;color:var(--text)}
+.vm-form input,.vm-form textarea{border:1px solid var(--border);border-radius:8px;padding:10px;font-size:16px}
+.vm-form select{border:1px solid var(--border);border-radius:8px;padding:10px 36px 10px 12px;font-size:16px;height:44px;background:#fff;color:var(--text);width:100%;appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');background-repeat:no-repeat;background-position:right 10px center;background-size:14px}
+.vm-form select:focus{outline:none;border-color:#bbb}
+
+/* Contact page: center text inside yellow starbelly buttons */
+.contact-page .sb-btn span{padding:0 20px !important; line-height:55px}
+
+/* Search */
+.vm-search .vm-search-bar{margin:10px 0 18px}
+.vm-search .vm-search-bar input{width:100%;max-width:560px;height:44px;border:1px solid var(--border);border-radius:10px;padding:0 14px;font-size:16px}
+.vm-results{display:grid;gap:14px}
+.vm-result{border:1px solid var(--border);border-radius:10px;padding:14px;background:#fff}
+.vm-result-grid{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start}
+.vm-thumb{width:100px;height:75px;border-radius:8px;overflow:hidden;background:#f3f3f3}
+.vm-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.vm-result h3{margin:0 0 6px}
+.vm-result .vm-snippet{margin:6px 0 0;color:var(--muted)}
+.vm-muted{color:var(--muted)}
+
+/* Blog inline CTA: YouTube kanal düğmesi metnini sarı yap */
+a.youtube-button{ color: var(--brand) !important; }
+a.youtube-button:hover{ text-decoration: underline; }
+
+/* YouTube page */
+.vm-yt-intro{margin-top:20px}
+.vm-yt-actions{display:flex;gap:12px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.vm-yt-search{display:flex;gap:8px;align-items:center}
+.vm-yt-search input{height:40px;border:1px solid var(--border);border-radius:10px;padding:0 12px}
+.vm-yt-embed{margin-top:12px}
+.vm-yt-player{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#000}
+.youtube-page .sb-banner.sb-banner-sm .sb-main-title-frame{padding:90px 0 24px !important}
+@media (max-width: 992px){
+  .youtube-page .sb-banner.sb-banner-sm .sb-main-title-frame{padding:80px 0 24px !important}
+}
+/* Contact page banner spacing */
+.contact-page .sb-banner.sb-banner-sm .sb-main-title-frame{padding:120px 0 30px !important}
+@media (max-width: 992px){
+  .contact-page .sb-banner.sb-banner-sm .sb-main-title-frame{padding:100px 0 30px !important}
+}
+
+/* Tabs on blog page */
+.vm-tabs{margin-top:6px}
+.vm-tab-buttons{display:flex;gap:8px;border-bottom:1px solid var(--border);margin-bottom:14px}
+.vm-tab-btn{appearance:none;border:1px solid var(--border);border-bottom:none;background:#fafafa;color:#333;padding:10px 14px;border-top-left-radius:10px;border-top-right-radius:10px;cursor:pointer}
+.vm-tab-btn.active{background:#fff;font-weight:600}
+.vm-tab-panel{display:none}
+.vm-tab-panel.active{display:block}
+
+/* Subscribe CTA (YouTube) */
+.vm-subscribe.sb-btn{background:var(--brand); color:#111; border-radius:999px; padding:0 8px; font-size:0.93rem; height:44px !important}
+.vm-subscribe .sb-icon{margin-right:6px; width:44px !important; height:44px !important}
+.vm-subscribe .sb-icon i{color:#c4302b; font-size:0.95rem}
+.vm-subscribe span{padding:0 10px 0 4px !important; line-height:44px !important}
+
+/* YouTube page spacing: bring subscribe section closer to banner */
+.vm-yt-list{padding-top:24px !important}
+@media (min-width: 992px){ .vm-yt-list{padding-top:24px !important} }

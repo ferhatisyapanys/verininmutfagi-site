@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- color of address bar in mobile browser -->
+  <meta name="theme-color" content="#28292C">
+  <!-- favicon  -->
+  <link rel="shortcut icon" href="img/thumbnail.ico" type="image/x-icon">
+  <title>Starbelly documentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #E56734;
+      color: #FDFDFF;
+    }
+
+    header {
+      padding: 90px 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 72px;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 36px;
+      text-align: center;
+    }
+
+    a {
+      color: #FDFDFF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #FDFDFF;
+      text-decoration: underline;
+    }
+
+    pre {
+      overflow-x: scroll;
+      padding: 30px;
+      background-color: #1A2430;
+      color: #FDFDFF;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Starbelly documentation</h1>
+      <h3>Thank you for purchasing!</h3>
+    </header>
+    <section class="marcup">
+      <h2>App HTML marcup</h2>
+      <br>
+      <br>
+
+
+
+
+      <pre style="margin: 0; line-height: 125%"><span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f8f8f2">DOCTYPE</span> <span style="color: #f8f8f2">html</span><span style="color: #f92672">&gt;</span>
+      <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">html</span> <span style="color: #f8f8f2">lang</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;zxx&quot;</span><span style="color: #f92672">&gt;</span>
+
+      <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">head</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">...</span>
+      <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">head</span><span style="color: #f92672">&gt;</span>
+
+      <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">body</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">app</span> <span style="color: #f8f8f2">wrapper</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-app&quot;</span><span style="color: #f92672">&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">preloader</span> <span style="color: #f92672">--&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-preloader&quot;</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">...</span>
+          <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">preloader</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">--&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">click</span> <span style="color: #f8f8f2">effect</span> <span style="color: #f92672">--&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-click-effect&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">loader</span> <span style="color: #f92672">--&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-load&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">top</span> <span style="color: #f8f8f2">bar</span> <span style="color: #f92672">--&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-top-bar-frame&quot;</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-top-bar-bg&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;container&quot;</span><span style="color: #f92672">&gt;</span>
+              <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-top-bar&quot;</span><span style="color: #f92672">&gt;</span>
+                <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">a</span> <span style="color: #f8f8f2">href</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;home-2.html&quot;</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-logo-frame&quot;</span><span style="color: #f92672">&gt;</span>
+                  <span style="color: #f92672">...</span>
+                <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">&gt;</span>
+                <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">menu</span> <span style="color: #f92672">--&gt;</span>
+                <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-right-side&quot;</span><span style="color: #f92672">&gt;</span>
+                  <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">nav</span> <span style="color: #f8f8f2">id</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-dynamic-menu&quot;</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-menu-transition&quot;</span><span style="color: #f92672">&gt;</span>
+                    <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">ul</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-navigation&quot;</span><span style="color: #f92672">&gt;</span>
+                      <span style="color: #f92672">...</span>
+                    <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">ul</span><span style="color: #f92672">&gt;</span>
+                  <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">nav</span><span style="color: #f92672">&gt;</span>
+                  <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-buttons-frame&quot;</span><span style="color: #f92672">&gt;</span>
+                    <span style="color: #f92672">...</span>
+                  <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+                <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+              <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">info</span> <span style="color: #f8f8f2">bar</span> <span style="color: #f92672">--&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-info-bar&quot;</span><span style="color: #f92672">&gt;</span>
+              <span style="color: #f92672">...</span>
+            <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">info</span> <span style="color: #f8f8f2">bar</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">--&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">minicart</span> <span style="color: #f92672">--&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-minicart&quot;</span><span style="color: #f92672">&gt;</span>
+              <span style="color: #f92672">...</span>
+            <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">minicart</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">--&gt;</span>
+          <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">top</span> <span style="color: #f8f8f2">bar</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">--&gt;</span>
+
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">dynamic</span> <span style="color: #f8f8f2">content</span> <span style="color: #f92672">--&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">id</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-dynamic-content&quot;</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-transition-fade&quot;</span><span style="color: #f92672">&gt;</span>
+
+            <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">banner</span> <span style="color: #f92672">--&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">section</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-banner&quot;</span><span style="color: #f92672">&gt;</span>
+              <span style="color: #f92672">...</span>
+            <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">section</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">banner</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">--&gt;</span>
+
+            <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">CONTENT</span> <span style="color: #f8f8f2">HERE</span> <span style="color: #f92672">--&gt;</span>
+
+            <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">footer</span> <span style="color: #f92672">--&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">footer</span><span style="color: #f92672">&gt;</span>
+              <span style="color: #f92672">...</span>
+            <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">footer</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">footer</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">--&gt;</span>
+
+          <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">dynamic</span> <span style="color: #f8f8f2">content</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">--&gt;</span>
+
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">discount</span> <span style="color: #f8f8f2">popup</span> <span style="color: #f92672">--&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">div</span> <span style="color: #f8f8f2">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;sb-popup-frame&quot;</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">...</span>
+          <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+          <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">discount</span> <span style="color: #f8f8f2">popup</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">--&gt;</span>
+
+        <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">div</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">app</span> <span style="color: #f8f8f2">wrapper</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">--&gt;</span>
+
+        <span style="color: #f92672">...</span>
+
+      <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">body</span><span style="color: #f92672">&gt;</span>
+
+      <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">html</span><span style="color: #f92672">&gt;</span>
+      </pre>
+
+
+
+
+
+
+    </section>
+    <section class="css-assets">
+      <br>
+      <br>
+      <h2>CSS assets</h2>
+      <p>Plugins</p>
+      <ul>
+        <li><a target="_blank" href="https://fontawesome.com/v4.7.0/icons/">Font awesome</a></li>
+        <li><a target="_blank" href="https://getbootstrap.com">Bootstrap</a></li>
+        <li><a target="_blank" href="https://idangero.us/swiper/">Swiper</a></li>
+        <li><a target="_blank" href="https://www.mapbox.com/">Mapbox</a></li>
+        <li><a target="_blank" href="https://fancyapps.com/fancybox/3/">Fancybox</a></li>
+      </ul>
+      <br>
+      <p>Starbelly scss</p>
+      <ul>
+
+        <li>_variables.scss</li>
+        <li>_common.scss</li>
+        <li>_frame.scss</li>
+        <li>_content.scss</li>
+        <li>_shop.scss</li>
+        <li>_illustrations.scss</li>
+        <br>
+        <li>style.scss (compiled in style.css)</li>
+
+      </ul>
+      <br>
+      <p>Starbelly css</p>
+      <ul>
+        <li>style.css</li>
+      </ul>
+      <br>
+      <br>
+
+
+
+      <pre style="margin: 0; line-height: 125%"><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">head</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">...</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">font</span> <span style="color: #f8f8f2">awesome</span> <span style="color: #f8f8f2">css</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">link</span> <span style="color: #f8f8f2">rel</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;stylesheet&quot;</span> <span style="color: #f8f8f2">href</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;css/plugins/font-awesome.min.css&quot;</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">bootstrap</span> <span style="color: #f8f8f2">css</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">link</span> <span style="color: #f8f8f2">rel</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;stylesheet&quot;</span> <span style="color: #f8f8f2">href</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;css/plugins/bootstrap.min.css&quot;</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">swiper</span> <span style="color: #f8f8f2">css</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">link</span> <span style="color: #f8f8f2">rel</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;stylesheet&quot;</span> <span style="color: #f8f8f2">href</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;css/plugins/swiper.min.css&quot;</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">mapbox</span> <span style="color: #f8f8f2">css</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">link</span> <span style="color: #f8f8f2">href</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;css/plugins/mapbox-style.css&quot;</span> <span style="color: #f8f8f2">rel</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;stylesheet&#39;</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">fancybox</span> <span style="color: #f8f8f2">css</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">link</span> <span style="color: #f8f8f2">rel</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;stylesheet&quot;</span> <span style="color: #f8f8f2">href</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;css/plugins/fancybox.min.css&quot;</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">starbelly</span> <span style="color: #f8f8f2">css</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">link</span> <span style="color: #f8f8f2">rel</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;stylesheet&quot;</span> <span style="color: #f8f8f2">href</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;css/style.css&quot;</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">...</span>
+      <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">head</span><span style="color: #f92672">&gt;</span>
+      </pre>
+
+
+
+
+
+
+
+    </section>
+    <section class="js assets">
+      <br>
+      <br>
+      <h2>Js assets</h2>
+      <p>Plugins</p>
+      <ul>
+
+        <li><a target="_blank" href="https://jquery.com">jQuery</a></li>
+        <li><a target="_blank" href="http://www.smoothscroll.net/mac/">Smooth scroll</a></li>
+        <li><a target="_blank" href="https://swup.js.org/">Swup</a></li>
+        <li><a target="_blank" href="https://idangero.us/swiper/">Swiper</a></li>
+        <li><a target="_blank" href="https://isotope.metafizzy.co">Isotope</a></li>
+        <li><a target="_blank" href="https://rgalus.github.io/sticky-js/">Sticky</a></li>
+        <li><a target="_blank" href="https://www.mapbox.com">Mapbox</a></li>
+        <li><a target="_blank" href="https://fancyapps.com/fancybox/3/">Fancybox</a></li>
+
+
+      </ul>
+      <br>
+      <p>Starbelly assets</p>
+      <ul>
+        <li>main.js</li>
+      </ul>
+      <br>
+      <br>
+
+
+
+
+      <pre style="margin: 0; line-height: 125%"><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">body</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">...</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">jquery</span> <span style="color: #f8f8f2">js</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">script</span> <span style="color: #f8f8f2">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/plugins/jquery.min.js&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">script</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">smooth</span> <span style="color: #f8f8f2">scroll</span> <span style="color: #f8f8f2">js</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">script</span> <span style="color: #f8f8f2">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/plugins/smooth-scroll.js&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">script</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">swup</span> <span style="color: #f8f8f2">js</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">script</span> <span style="color: #f8f8f2">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/plugins/swup.min.js&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">script</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">swiper</span> <span style="color: #f8f8f2">js</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">script</span> <span style="color: #f8f8f2">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/plugins/swiper.min.js&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">script</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">isotope</span> <span style="color: #f8f8f2">js</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">script</span> <span style="color: #f8f8f2">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/plugins/isotope.js&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">script</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">sticky</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">script</span> <span style="color: #f8f8f2">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/plugins/sticky.js&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">script</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">mapbox</span> <span style="color: #f8f8f2">js</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">script</span> <span style="color: #f8f8f2">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/plugins/mapbox.min.js&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">script</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">fancybox</span> <span style="color: #f8f8f2">js</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">script</span> <span style="color: #f8f8f2">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/plugins/fancybox.min.js&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">script</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #960050;">!</span><span style="color: #f92672">--</span> <span style="color: #f8f8f2">starbelly</span> <span style="color: #f8f8f2">js</span> <span style="color: #f92672">--&gt;</span>
+        <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">script</span> <span style="color: #f8f8f2">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/main.js&quot;</span><span style="color: #f92672">&gt;&lt;/</span><span style="color: #f8f8f2">script</span><span style="color: #f92672">&gt;</span>
+      <span style="color: #f92672">&lt;/</span><span style="color: #f8f8f2">body</span><span style="color: #f92672">&gt;</span>
+      </pre>
+
+
+
+
+
+
+    </section>
+    <section class="fonts">
+      <br>
+      <br>
+      <h2>Fonts</h2>
+      <ul>
+        <li><a target="_blank" href="https://fonts.google.com/specimen/Rubik?query=rubi">Rubik</a></li>
+        <li><a target="_blank" href="https://fonts.google.com/specimen/Monoton">Monoton</a></li>
+      </ul>
+      <br>
+      <h2>Icons</h2>
+      <ul>
+        <li><a target="_blank" href="https://fontawesome.com">Font awesome</a></li>
+      </ul>
+
+    </section>
+    <br>
+    <br>
+  </div>
+</body>
+
+</html>

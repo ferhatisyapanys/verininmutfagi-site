@@ -1,0 +1,7 @@
+# Simple container for analytics server
+FROM python:3.11-slim
+WORKDIR /app
+COPY scripts/analytics_server.py /app/scripts/analytics_server.py
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+EXPOSE 8080
+CMD ["python3", "/app/scripts/analytics_server.py", "--host", "0.0.0.0", "--port", "8080", "--db", "/app/analytics.db"]

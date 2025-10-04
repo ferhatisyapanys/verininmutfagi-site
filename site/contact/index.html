@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim ve Rezervasyon - Verinin Mutfağı</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <script src="../env.config.js"></script>
+  <link rel="stylesheet" href="../vendor/starbelly/css/plugins/font-awesome.min.css">
+  <link rel="stylesheet" href="../vendor/starbelly/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/starbelly/css/style.css">
+  <link rel="stylesheet" href="../assets/css/site.css?v=3">
+</head>
+<body class="contact-page">
+  <div class="sb-top-bar-frame">
+    <div class="sb-top-bar-bg"></div>
+    <div class="container">
+      <div class="sb-top-bar">
+        <a href="../index.html" class="sb-logo-frame">
+          <img src="../assets/img/logo.png" alt="Verinin Mutfağı">
+        </a>
+        <div class="sb-right-side">
+          <nav class="sb-menu-transition">
+            <ul class="sb-navigation">
+              <li><a href="../index.html">Ana Sayfa</a></li>
+              <li><a href="../blog/index.html">Blog</a></li>
+              <li><a href="../bultenler/index.html">Haftalık Bültenler</a></li>
+              <li><a href="../youtube/index.html">YouTube</a></li>
+              <li class="sb-active"><a href="index.html">İletişim</a></li>
+            </ul>
+          </nav>
+          <div class="sb-buttons-frame">
+            <div class="sb-menu-btn"><span></span></div>
+            <div class="sb-info-btn"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sb-dynamic-content" class="sb-transition-fade">
+    <!-- banner -->
+    <section class="sb-banner sb-banner-sm sb-banner-color">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="sb-main-title-frame">
+              <div class="sb-main-title text-center">
+                <span class="sb-suptitle sb-mb-30">İletişim</span>
+                <h1 class="sb-mb-30">İletişim ve <br>Rezervasyon</h1>
+                <p class="sb-text sb-text-lg sb-mb-30">10:00–18:00 arasında 15 dakikalık görüşme ayırtabilir ya da mesaj gönderebilirsiniz.</p>
+                <a href="#" id="btn-appointment-link" class="sb-btn sb-mb-30" target="_blank" rel="noopener" data-track="contact-hero-appointment"><span>Hemen Randevu Al</span></a>
+                <ul class="sb-breadcrumbs">
+                  <li><a href="../index.html">Ana Sayfa</a></li>
+                  <li><a href="#.">İletişim</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- banner end -->
+
+    <!-- content -->
+    <section class="sb-p-90-90">
+      <div class="container">
+        <div class="row">
+          <!-- Paylaşılan Zorunlu Alanlar: E-posta + KVKK -->
+          <div class="col-12 sb-mb-30">
+            <div class="sb-card">
+              <div class="sb-card-body">
+                <h3 class="sb-mb-15">İletişim Bilgileri</h3>
+                <div class="vm-form">
+                  <label>E-posta
+                    <input type="email" id="c-email" placeholder="ornek@eposta.com" required>
+                  </label>
+                  <div class="kvkk-box" style="border:1px solid var(--border); border-radius:8px; padding:10px; background:#fff; max-height:180px; overflow:auto">
+                    <strong>KVKK Aydınlatma Metni</strong>
+                    <p style="margin:8px 0 0 0; color:var(--muted); font-size:14px">
+                      Tarafınızca paylaşılan ad, soyad ve e‑posta bilgileri; yalnızca randevu oluşturma ve 
+                      iletişimin sağlanması amacıyla işlenecek, üçüncü kişilerle paylaşılmayacak ve mevzuata 
+                      uygun şekilde saklanacaktır. İlgili kişi haklarınız (erişim, düzeltme, silme) kapsamında 
+                      başvuruda bulunabilirsiniz.
+                    </p>
+                  </div>
+                  <label style="display:flex;align-items:center;gap:8px">
+                    <input type="checkbox" id="kvkk-ok" required>
+                    <span>KVKK Aydınlatma Metni'ni okudum ve kabul ediyorum.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 sb-mb-30">
+            <div class="sb-card sb-mb-30">
+              <div class="sb-card-body">
+                <h3 class="sb-mb-15">15 Dakikalık Görüşme Ayırt</h3>
+                <div class="vm-form">
+                  <label>Ad Soyad
+                    <input type="text" id="r-name" placeholder="Adınız Soyadınız" required>
+                  </label>
+                  
+                  <label>Tarih
+                    <input type="date" id="r-date" required>
+                  </label>
+                  <label>Saat (10:00–18:00)
+                    <select id="r-time" required>
+                      <option value="" disabled selected>Saat seçin</option>
+                      <option value="10:00">10:00</option>
+                      <option value="10:15">10:15</option>
+                      <option value="10:30">10:30</option>
+                      <option value="10:45">10:45</option>
+                      <option value="11:00">11:00</option>
+                      <option value="11:15">11:15</option>
+                      <option value="11:30">11:30</option>
+                      <option value="11:45">11:45</option>
+                      <option value="12:00">12:00</option>
+                      <option value="12:15">12:15</option>
+                      <option value="12:30">12:30</option>
+                      <option value="12:45">12:45</option>
+                      <option value="13:00">13:00</option>
+                      <option value="13:15">13:15</option>
+                      <option value="13:30">13:30</option>
+                      <option value="13:45">13:45</option>
+                      <option value="14:00">14:00</option>
+                      <option value="14:15">14:15</option>
+                      <option value="14:30">14:30</option>
+                      <option value="14:45">14:45</option>
+                      <option value="15:00">15:00</option>
+                      <option value="15:15">15:15</option>
+                      <option value="15:30">15:30</option>
+                      <option value="15:45">15:45</option>
+                      <option value="16:00">16:00</option>
+                      <option value="16:15">16:15</option>
+                      <option value="16:30">16:30</option>
+                      <option value="16:45">16:45</option>
+                      <option value="17:00">17:00</option>
+                      <option value="17:15">17:15</option>
+                      <option value="17:30">17:30</option>
+                      <option value="17:45">17:45</option>
+                    </select>
+                  </label>
+                  <label>Açıklama (opsiyonel)
+                    <input type="text" id="r-note" placeholder="Kısa not">
+                  </label>
+                  
+                  <div style="display:flex; gap:10px; flex-wrap:wrap">
+                    <a class="vm-btn vm-btn-brand" id="btn-appointment-link-2" href="#" target="_blank" rel="noopener" data-track="contact-form-appointment">Hemen Randevu Al</a>
+                    <button class="vm-btn" id="btn-gcal" data-track="contact-gcal">Google Calendar Taslak</button>
+                    <button class="vm-btn" id="btn-api" style="display:none">Doğrudan Takvime Ekle (API)</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sb-card">
+              <div class="sb-card-body">
+                <h3 class="sb-mb-15">Mesaj Gönder</h3>
+                <div class="vm-form">
+                  <label>Ad Soyad
+                    <input type="text" id="c-name" placeholder="Adınız Soyadınız" required>
+                  </label>
+                  
+                  <label>Konu
+                    <input type="text" id="c-subject" placeholder="Konu" required>
+                  </label>
+                  <label>Mesaj
+                    <textarea id="c-message" rows="5" placeholder="Mesajınız"></textarea>
+                  </label>
+                  <div>
+                    <button class="vm-btn" id="btn-mail">E-posta ile Gönder</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 sb-mb-30">
+            <div class="sb-card">
+              <div class="sb-card-body">
+                <h3 class="sb-mb-15">Bilgiler</h3>
+                <ul class="sb-list sb-mb-15">
+                  <li><b>E-posta:</b><span>ferhatisyapan@gmail.com</span></li>
+                </ul>
+                <p class="sb-text">Randevu saatleri 10:00–18:00 arasındadır. 15 dakikalık dilimlerden birini seçebilirsiniz.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- content end -->
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="sb-footer-frame">
+        <a href="../index.html" class="sb-logo-frame">
+          <img src="../assets/img/logo.png" alt="Verinin Mutfağı">
+        </a>
+        <div class="sb-copy">&copy; <a href="../index.html">Verinin Mutfağı</a></div>
+        <nav class="vm-social">
+          <a href="https://www.linkedin.com/in/ferhatisyapan/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/ferhatisyapanys/VerininMutfagi" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://instagram.com/verininmutfagi" target="_blank" rel="noopener">Instagram</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="../assets/js/contact.js"></script>
+  <script src="../assets/js/analytics.config.js"></script>
+  <script src="../assets/js/analytics.js"></script>
+</body>
+</html>

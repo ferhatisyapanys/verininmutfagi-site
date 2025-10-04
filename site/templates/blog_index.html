@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Verinin Mutfağı</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="Veri ve yapay zekâ üzerine güncel blog yazıları. Uygulamalı içerikler, ipuçları ve kariyer rehberleri.">
+  <meta property="og:title" content="Blog - Verinin Mutfağı">
+  <meta property="og:description" content="Veri ve yapay zekâ üzerine güncel blog yazıları.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/img/covers/default.jpg">
+  <script src="../env.config.js"></script>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog - Verinin Mutfağı">
+  <meta name="twitter:description" content="Veri ve yapay zekâ üzerine güncel blog yazıları.">
+  <meta name="twitter:image" content="../assets/img/covers/default.jpg">
+  <link rel="alternate" type="application/rss+xml" title="Verinin Mutfağı Blog" href="feed.xml">
+  <script type="application/ld+json">{{JSONLD_BREADCRUMB}}</script>
+  <script type="application/ld+json">{{JSONLD_INDEX}}</script>
+  <!-- starbelly header styles -->
+  <link rel="stylesheet" href="../vendor/starbelly/css/plugins/font-awesome.min.css">
+  <link rel="stylesheet" href="../vendor/starbelly/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/starbelly/css/style.css">
+  <link rel="stylesheet" href="../assets/css/site.css?v=4">
+</head>
+<body class="blog-page">
+  <div class="sb-top-bar-frame">
+    <div class="sb-top-bar-bg"></div>
+    <div class="container">
+      <div class="sb-top-bar">
+        <a href="../index.html" class="sb-logo-frame">
+          <img src="../assets/img/logo.png" alt="Verinin Mutfağı">
+        </a>
+        <div class="sb-right-side">
+          <nav class="sb-menu-transition">
+            <ul class="sb-navigation">
+              <li><a href="../index.html">Ana Sayfa</a></li>
+              <li class="sb-active"><a href="index.html">Blog</a></li>
+              <li><a href="../bultenler/index.html">Haftalık Bültenler</a></li>
+              <li><a href="../youtube/index.html">YouTube</a></li>
+              <li><a href="../contact/index.html">İletişim</a></li>
+            </ul>
+          </nav>
+          <div class="sb-buttons-frame">
+            <div class="sb-menu-btn"><span></span></div>
+            <div class="sb-info-btn"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="vm-container">
+      <h1 class="vm-title">Blog</h1>
+      <div class="vm-search">
+        <div class="vm-search-bar">
+          <input id="vm-search-input" type="search" placeholder="Yazı arayın... (en az 2 harf)">
+        </div>
+        <div id="vm-results" class="vm-results" aria-live="polite"></div>
+      </div>
+      <h2 class="vm-subtitle">Tüm Yazılar</h2>
+      <div class="vm-grid">
+        {{POST_CARDS}}
+      </div>
+    </section>
+
+    <!-- İletişim bloğu blog sayfasından kaldırıldı -->
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="sb-footer-frame">
+        <a href="../index.html" class="sb-logo-frame">
+          <img src="../assets/img/logo.png" alt="Verinin Mutfağı">
+        </a>
+        <div class="sb-copy">&copy; <a href="../index.html">Verinin Mutfağı</a></div>
+        <nav class="vm-social">
+          <a href="https://www.linkedin.com/in/ferhatisyapan/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/ferhatisyapanys/VerininMutfagi" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://instagram.com/verininmutfagi" target="_blank" rel="noopener">Instagram</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script id="vm-search-data" type="application/json">{{SEARCH_JSON}}</script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/analytics.config.js"></script>
+  <script src="../assets/js/analytics.js"></script>
+  
+</body>
+</html>
