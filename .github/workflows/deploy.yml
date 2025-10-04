@@ -42,10 +42,6 @@ jobs:
           # optional runtime env config for analytics/contact
           if [ -n "${{ secrets.ANALYTICS_URL }}" ] || [ -n "${{ secrets.ANALYTICS_TOKEN }}" ] || [ -n "${{ secrets.CONTACT_API_URL }}" ] || [ -n "${{ secrets.CONTACT_API_TOKEN }}" ]; then
             cat > site/env.config.js <<EOF
-window.ANALYTICS_URL = '${{ secrets.ANALYTICS_URL }}';
-window.ANALYTICS_TOKEN = '${{ secrets.ANALYTICS_TOKEN }}';
-window.CONTACT_API_URL = '${{ secrets.CONTACT_API_URL }}';
-window.CONTACT_API_TOKEN = '${{ secrets.CONTACT_API_TOKEN }}';
 EOF
           fi
           touch site/.nojekyll
