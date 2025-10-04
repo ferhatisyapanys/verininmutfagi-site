@@ -41,8 +41,12 @@ jobs:
           python3 scripts/check_links.py --base site --strict
           # optional runtime env config for analytics/contact
           if [ -n "${{ secrets.ANALYTICS_URL }}" ] || [ -n "${{ secrets.ANALYTICS_TOKEN }}" ] || [ -n "${{ secrets.CONTACT_API_URL }}" ] || [ -n "${{ secrets.CONTACT_API_TOKEN }}" ]; then
-            cat > site/env.config.js <<EOF
-EOF
+            {
+              echo "window.ANALYTICS_URL = '${{ secrets.ANALYTICS_URL }}';"
+              echo "window.ANALYTICS_TOKEN = '${{ secrets.ANALYTICS_TOKEN }}';"
+              echo "window.CONTACT_API_URL = '${{ secrets.CONTACT_API_URL }}';"
+              echo "window.CONTACT_API_TOKEN = '${{ secrets.CONTACT_API_TOKEN }}';"
+            } > site/env.config.js
           fi
           touch site/.nojekyll
 
@@ -54,10 +58,10 @@ EOF
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - id: deploy
+      - id: deployment
         name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
