@@ -450,6 +450,24 @@ def build_post(input_path: pathlib.Path, out_path: pathlib.Path):
         if '</head>' in html:
             html = html.replace('</head>', scripts + '\n</head>')
     html = inject_footer(html)
+    # Ensure menu script for blog posts (relative one level up)
+    try:
+        if 'assets/js/menu.js' not in html:
+            if '</body>' in html:
+                html = html.replace('</body>', '\n  <script src="../assets/js/menu.js"></script>\n</body>')
+            else:
+                html += '\n<script src="../assets/js/menu.js"></script>'
+    except Exception:
+        pass
+    # Ensure GA (gtag) loader if GA_MEASUREMENT_ID is provided via env.config.js
+    try:
+        if 'assets/js/ga-init.js' not in html:
+            if '</head>' in html:
+                html = html.replace('</head>', '\n  <script src="../env.config.js"></script>\n  <script src="../assets/js/ga-init.js"></script>\n</head>')
+            else:
+                html = ('<script src="../env.config.js"></script>\n<script src="../assets/js/ga-init.js"></script>\n') + html
+    except Exception:
+        pass
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
     return extract_title(html)
@@ -461,18 +479,33 @@ def main():
     blog_srcs = [p for p in BLOG_DIR.glob("*.html") if p.name.lower() != "index.html"]
     if blog_srcs:
         for src in blog_srcs:
+            # mtime'ı koru ki sıralama bozulmasın
+            try:
+                ts_before = src.stat().st_mtime
+            except Exception:
+                ts_before = None
+            try:
+                raw_before = src.read_text(encoding="utf-8", errors="ignore")
+            except Exception:
+                raw_before = ''
             try:
                 # Rebuild in-place to inject consistent header/navigation
                 build_post(src, src)
+                # mtime'ı eski haline getir
+                if ts_before is not None:
+                    import os
+                    os.utime(src, (ts_before, ts_before))
                 raw_html = src.read_text(encoding="utf-8", errors="ignore")
             except Exception:
-                try:
-                    raw_html = src.read_text(encoding="utf-8", errors="ignore")
-                except Exception:
-                    continue
+                # okuma hatası olursa eski içeriğe dön
+                raw_html = raw_before or ''
             title = extract_title(raw_html)
             slug = src.stem
-            ts = datetime.fromtimestamp(src.stat().st_mtime)
+            # sıralama için eski mtime'ı kullan
+            try:
+                ts = datetime.fromtimestamp(ts_before if ts_before is not None else src.stat().st_mtime)
+            except Exception:
+                ts = datetime.utcnow()
             date_str = ts.strftime("%d %b %Y")
             cover_rel = extract_cover(raw_html, BLOG_DIR, slug)
             posts.append({
@@ -482,26 +515,34 @@ def main():
                 "cover": cover_rel,
                 "ts": int(ts.timestamp()),
             })
-    else:
-        # Kaynak yazıları: content/*.html (opsiyonel kaynak klasörü)
-        content_dir = ROOT / 'content'
-        source_files = [p for p in content_dir.glob('*.html')] if content_dir.exists() else []
-        for src in source_files:
-            # Slug'ı başlıktan üret
+
+    # Ek olarak: content/ klasöründeki yeni yazıları da yayına al
+    # (site/blog altında aynı slug varsa atla; yoksa oluştur)
+    content_dir = ROOT / 'content'
+    source_files = [p for p in content_dir.glob('*.html')] if content_dir.exists() else []
+    for src in source_files:
+        try:
             temp_html = src.read_text(encoding="utf-8", errors="ignore")
-            title_tmp = extract_title(temp_html)
-            slug = slugify_from_title(title_tmp, src.name)
-            dst = BLOG_DIR / f"{slug}.html"
-            raw_html = src.read_text(encoding="utf-8", errors="ignore")
-            title = extract_title(raw_html)
+        except Exception:
+            continue
+        title_tmp = extract_title(temp_html)
+        slug = slugify_from_title(title_tmp, src.name)
+        dst = BLOG_DIR / f"{slug}.html"
+        # Eğer hedef yoksa ya da kaynak daha yeniyse oluştur/güncelle
+        needs_build = (not dst.exists()) or (src.stat().st_mtime > dst.stat().st_mtime)
+        if needs_build:
+            raw_html = temp_html
             # Yayınla (aynı format)
-            build_post(src, dst)
+            try:
+                build_post(src, dst)
+            except Exception:
+                # build başarısızsa bu kaynağı atla
+                continue
             ts = datetime.fromtimestamp(src.stat().st_mtime)
             date_str = ts.strftime("%d %b %Y")
-            # Kapak görseli: içerikten (img/src veya background-image) çıkar
             cover_rel = extract_cover(raw_html, ROOT, slug)
             posts.append({
-                "title": title,
+                "title": extract_title(raw_html),
                 "slug": slug,
                 "date": date_str,
                 "cover": cover_rel,

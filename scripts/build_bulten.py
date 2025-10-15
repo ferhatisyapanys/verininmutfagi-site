@@ -180,13 +180,19 @@ def build_one(rec):
 def build_index(items):
     cards = []
     for it in items:
+        # Listeleme sayfasında başlık: "Verinin Dünyası <GG Ay>"
+        title_disp = (it.get('title') or '').strip()
+        if title_disp and not title_disp.lower().startswith('verinin dünyası'):
+            title_disp = f"Verinin Dünyası {title_disp}"
+        elif not title_disp:
+            title_disp = 'Verinin Dünyası'
         cards.append(
             '\n'.join([
                 '<article class="vm-card">',
-                f'  <a href="{escape(it["slug"])}.html"><img class="vm-card-cover" loading="lazy" src="{escape(it["hero"]) }" alt="{escape(it["title"]) }"></a>',
+                f'  <a href="{escape(it["slug"])}.html"><img class="vm-card-cover" loading="lazy" src="{escape(it["hero"]) }" alt="{escape(title_disp) }"></a>',
                 '  <div class="vm-card-body">',
                 f'    <div class="vm-card-meta">{escape(it["date"])}</div>',
-                f'    <h3><a href="{escape(it["slug"]) }.html">{escape(it["title"]) }</a></h3>',
+                f'    <h3><a href="{escape(it["slug"]) }.html">{escape(title_disp) }</a></h3>',
                 '  </div>',
                 '</article>'
             ])
@@ -246,10 +252,16 @@ def build_index(items):
             img = img[3:]
         if SITE_BASE_URL and img.startswith('assets/'):
             img = SITE_BASE_URL + "/" + img
+        # JSON-LD'de de aynı görünen başlığı kullanalım
+        name_disp = (it.get('title') or '').strip()
+        if name_disp and not name_disp.lower().startswith('verinin dünyası'):
+            name_disp = f"Verinin Dünyası {name_disp}"
+        elif not name_disp:
+            name_disp = 'Verinin Dünyası'
         items_ld.append({
             "@type": "ListItem",
             "position": i,
-            "item": {"@id": url, "name": it['title'], "image": img}
+            "item": {"@id": url, "name": name_disp, "image": img}
         })
     itemlist = {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": items_ld}
     html = html.replace('{{JSONLD_BREADCRUMB}}', json.dumps(breadcrumb, ensure_ascii=False))
