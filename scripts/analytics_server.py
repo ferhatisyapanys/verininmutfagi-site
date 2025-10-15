@@ -438,7 +438,8 @@ def main():
             return dt - timedelta(days=dt.weekday())
         TR_MONTHS = {1:'Ocak',2:'Şubat',3:'Mart',4:'Nisan',5:'Mayıs',6:'Haziran',7:'Temmuz',8:'Ağustos',9:'Eylül',10:'Ekim',11:'Kasım',12:'Aralık'}
         def weekly_title_slug(dt):
-            t = f"Verinin Dünyası {dt.day} {TR_MONTHS.get(dt.month, dt.strftime('%b'))}"
+            # Yeni kural: sadece gün + ay adı (örn. "06 Ekim")
+            t = f"{dt.day:02d} {TR_MONTHS.get(dt.month, dt.strftime('%b'))}"
             slug = f"verinin-dunyasi-{dt.strftime('%Y-%m-%d')}"
             return t, slug, dt.strftime('%Y-%m-%d')
         def extract_title_body(html):

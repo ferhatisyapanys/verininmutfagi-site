@@ -28,7 +28,7 @@ touch site/.nojekyll
 echo "[check] Scanning internal links for broken references"
 # Provide empty env.config.js locally if not created by CI secrets
 if [ ! -f site/env.config.js ]; then
-  echo "window.ANALYTICS_URL=window.ANALYTICS_URL||''; window.ANALYTICS_TOKEN=window.ANALYTICS_TOKEN||''; window.CONTACT_API_URL=window.CONTACT_API_URL||''; window.CONTACT_API_TOKEN=window.CONTACT_API_TOKEN||'';" > site/env.config.js
+  echo "window.ANALYTICS_URL=window.ANALYTICS_URL||''; window.ANALYTICS_TOKEN=window.ANALYTICS_TOKEN||''; window.CONTACT_API_URL=window.CONTACT_API_URL||''; window.CONTACT_API_TOKEN=window.CONTACT_API_TOKEN||''; window.GA_MEASUREMENT_ID=window.GA_MEASUREMENT_ID||'';" > site/env.config.js
 fi
 
 # Optionally write CNAME for GitHub Pages if PUBLISH_CNAME is set

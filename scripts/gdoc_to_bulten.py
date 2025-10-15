@@ -79,7 +79,8 @@ def monday_of(dt: datetime) -> datetime:
 
 def title_from_weekstart(dt: datetime) -> str:
     mname = TR_MONTHS.get(dt.month, dt.strftime('%b'))
-    return f"Verinin Dünyası {dt.day} {mname}"
+    # Yeni kural: sadece gün + ay adı (örn. "06 Ekim")
+    return f"{dt.day:02d} {mname}"
 
 
 def main():
