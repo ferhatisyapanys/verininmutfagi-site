@@ -20,6 +20,27 @@
       q.push(ev); saveQ(q);
       // soft flush async
       setTimeout(flush, 50);
+      // Bridge to GA4 if available (skip pure page views to avoid double count)
+      try{
+        if (window.gtag && ev && ev.event && ev.event !== 'view'){
+          var params = {};
+          if (ev.value != null) params.value = ev.value;
+          if (ev.element) params.element = ev.element;
+          if (ev.props){
+            for (var k in ev.props){ if (!Object.prototype.hasOwnProperty.call(ev.props,k)) continue;
+              var v = ev.props[k];
+              params[k] = (v && typeof v === 'object') ? JSON.stringify(v) : v;
+            }
+          }
+          // Map common cases
+          if (ev.event === 'click') {
+            params.event_category = 'interaction';
+          } else if (ev.event === 'search') {
+            params.search_term = ev.value || params.search_term;
+          }
+          window.gtag('event', ev.event, params);
+        }
+      }catch(_){}
     }catch(e){}
   }
   function flush(){

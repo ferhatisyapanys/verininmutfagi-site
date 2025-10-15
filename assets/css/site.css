@@ -85,6 +85,31 @@ a:hover{text-decoration:underline}
   .sb-top-bar .sb-logo-frame img{ height:40px; max-height:60px }
 }
 
+/* Top-right menu (3 dots / hamburger) */
+.vm-menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);display:none;z-index:9998}
+.vm-menu-overlay.open{display:block}
+.vm-menu-panel{position:fixed;top:72px;right:12px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.15);padding:8px;min-width:220px;display:none;z-index:9999}
+.vm-menu-panel.open{display:block}
+.vm-menu-list{display:flex;flex-direction:column}
+.vm-menu-list a{padding:10px 12px;border-radius:8px;color:#111}
+.vm-menu-list a:hover{background:#f7f7f7;text-decoration:none}
+@media (max-width: 992px){ .vm-menu-panel{top:64px; right:8px; min-width:200px} }
+
+/* Blog footer logo: keep aspect ratio and consistent size */
+.blog-page footer .sb-footer-frame .sb-logo-frame img{
+  height: 44px;
+  width: auto !important;
+  max-height: 52px;
+  display: block;
+  object-fit: contain;
+}
+@media (max-width: 992px){
+  .blog-page footer .sb-footer-frame .sb-logo-frame img{
+    height: 36px;
+    max-height: 44px;
+  }
+}
+
 /* Home hero: icon backgrounds brand yellow on gray variant */
 .home-page .sb-btn.sb-btn-2.sb-btn-gray.sb-btn-icon .sb-icon{
   background-color: var(--brand) !important;
@@ -119,6 +144,9 @@ a:hover{text-decoration:underline}
 /* Slight nudge for utensils glyph to match visual baseline */
 .home-page .sb-btn .fa-utensils{ transform: translateY(1px); }
 
+/* Ensure banner doesn't leak large background shapes below section */
+.sb-banner{ overflow: hidden }
+
 /* Features section */
 .vm-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
 .vm-feature{border:1px solid var(--border);border-radius:12px;background:#fff;padding:20px}
@@ -140,6 +168,43 @@ a:hover{text-decoration:underline}
 .vm-portrait-frame .sb-girl{width:100%; height:100%; max-width:none; border-radius:0; box-shadow:none; object-fit:cover; object-position: 20% 15%}
 @media (min-width: 992px){ .vm-portrait-frame{ margin:0 auto; transform:translateX(-24px) } }
 @media (min-width: 1200px){ .vm-portrait-frame{ transform:translateX(-36px) } }
+
+/* Mobile: simplify hero decorations to avoid stacking images */
+@media (max-width: 992px){
+  /* Remove big background circle behind hero section on small screens */
+  .sb-banner .sb-bg-1{ display:none !important }
+  /* Hide decorative circles and svgs from template to prevent them breaking layout */
+  .sb-illustration-1 .sb-cirkle-1,
+  .sb-illustration-1 .sb-cirkle-2,
+  .sb-illustration-1 .sb-cirkle-3,
+  .sb-illustration-1 .sb-cirkle-4,
+  .sb-illustration-1 .sb-cirkle-5,
+  .sb-illustration-1 .sb-pik-1,
+  .sb-illustration-1 .sb-pik-2,
+  .sb-illustration-1 .sb-pik-3{ display:none !important }
+  /* Stabilize container */
+  .sb-illustration-1{ position: relative }
+  .sb-illustration-1{ display:flex; justify-content:center }
+  .sb-illustration-1 .vm-portrait-frame{ max-width:420px; margin:0 auto }
+  /* If still causing overlap, hide the entire hero illustration on small screens */
+  .sb-illustration-1{ display:none !important }
+}
+
+/* Secondary illustration block: ensure responsive image without overlapping shapes */
+@media (max-width: 992px){
+  .sb-illustration-2 .sb-square,
+  .sb-illustration-2 .sb-cirkle-1,
+  .sb-illustration-2 .sb-cirkle-2,
+  .sb-illustration-2 .sb-cirkle-3,
+  .sb-illustration-2 .sb-cirkle-4{ display:none !important }
+  .sb-illustration-2 .sb-interior-frame{ width:100%; max-width:520px; margin:0 auto }
+  .sb-illustration-2 .sb-interior{ width:100%; height:auto; display:block }
+}
+/* On phones and small tablets, hide the entire secondary illustration to avoid stacking */
+@media (max-width: 1200px){ .sb-illustration-2{ display:none !important } }
+
+/* On medium screens too, hide the huge hero background circle */
+@media (max-width: 1400px){ .sb-banner .sb-bg-1{ display:none !important } }
 
 /* Hero title slight reduction to fit two lines */
 @media (min-width: 992px){
