@@ -273,7 +273,7 @@ def build_post(input_path: pathlib.Path, out_path: pathlib.Path):
             '        <div class="sb-copy">&copy; <a href="../index.html">Verinin Mutfağı</a></div>\n'
             '        <nav class="vm-social">\n'
             '          <a href="https://www.linkedin.com/in/ferhatisyapan/" target="_blank" rel="noopener">LinkedIn</a>\n'
-            '          <a href="https://github.com/ferhatisyapanys/VerininMutfagi" target="_blank" rel="noopener">GitHub</a>\n'
+            '          <a href="https://open.spotify.com/show/5mYZqYRXCAZWgZupK2lOoA?si=9a88f51a68794aef" target="_blank" rel="noopener">PodCast</a>\n'
             '          <a href="https://instagram.com/verininmutfagi" target="_blank" rel="noopener">Instagram</a>\n'
             '        </nav>\n'
             '      </div>\n'
