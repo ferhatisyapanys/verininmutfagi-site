@@ -221,6 +221,11 @@ a:hover{text-decoration:underline}
 /* Contact page: center text inside yellow starbelly buttons */
 .contact-page .sb-btn span{padding:0 20px !important; line-height:55px}
 
+/* Contact info list spacing */
+.contact-page .sb-list li{display:flex;gap:8px;align-items:flex-start;margin:6px 0}
+.contact-page .sb-list li b{min-width:80px}
+@media (max-width: 576px){ .contact-page .sb-list li b{min-width:70px} }
+
 /* Search */
 .vm-search .vm-search-bar{margin:10px 0 18px}
 .vm-search .vm-search-bar input{width:100%;max-width:560px;height:44px;border:1px solid var(--border);border-radius:10px;padding:0 14px;font-size:16px}
